@@ -1,5 +1,7 @@
 import { defineUserConfig } from 'vuepress';
 
+// https://stackoverflow.com/questions/54019105/list-subfolders-in-sidebar-navigation
+
 export default defineUserConfig({
   lang: 'en-US',
   title: 'Vue TypeScript Cheatsheets',
@@ -9,8 +11,7 @@ export default defineUserConfig({
     '/': {
       lang: 'en-US',
       title: 'Vue TypeScript Cheatsheets',
-      description:
-        'Cheatsheets for Vue developers using TypeScript',
+      description: 'Cheatsheets for Vue developers using TypeScript',
     },
   },
 
@@ -25,5 +26,14 @@ export default defineUserConfig({
         link: 'https://github.com/funny-family/vue-typescript-cheatsheet',
       },
     ],
+
+    sidebar: {
+      '/guide/': [
+        {
+          text: 'Guide',
+          children: ['/guide/introduction.md'],
+        },
+      ],
+    },
   },
 });
